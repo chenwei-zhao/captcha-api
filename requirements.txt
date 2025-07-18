@@ -1,6 +1,2 @@
-ultralytics>=8.0.0
-onnxruntime
-onnx
 captcha_recognizer
 fastapi[standard]
-pillow

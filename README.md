@@ -30,6 +30,23 @@ python api_test.py
 
 ```
 
+## opencv 与 numpy 兼容性
+
+兼容版本1:
+```
+opencv-python==4.12.0.88
+numpy==2.2.6
+```
+
+兼容版本2:
+```
+opencv-python==4.8.0.74
+numpy==1.23.0
+```
+
+更多兼容的版本请自行尝试
+
+
 # 接口文档
 
 启动服务后，在浏览器中访问 ``http://localhost:8000/docs`` 即可查看接口文档。
@@ -68,12 +85,6 @@ if __name__ == "__main__":
 
 在生产环境中，建议结合Gunicorn和Uvicorn，高效运行FastAPI应用，以提供足够的并发处理能力和稳定性。
 
-# 遇到问题
-
-- Error loading “xxx\Lib\site-packages\torch\lib\fbgemm.dll” or one of its dependencies.
-    - 参考 [Issues 2](https://github.com/chenwei-zhao/captcha-recognizer/issues/2)
-- Model Unsupported model IR version: 9, max supported IR version: 8
-    - 参考 [Issues 1](https://github.com/chenwei-zhao/captcha-recognizer/issues/1)
 
 # 免责声明
 
