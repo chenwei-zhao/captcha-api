@@ -1,94 +1,36 @@
-
 # captcha-api
 
-基于FastAPI + [Captcha Recognizer](https://github.com/chenwei-zhao/captcha-recognizer)库 搭建的滑块验证码识别服务
+基于Vue + FastAPI 搭建的验证码识别演示平台
+验证码识别库:  [Captcha Recognizer](https://github.com/chenwei-zhao/captcha-recognizer)
 
-# 版本要求
+# 依赖
 
-* ``Python`` >= 3.8.0
+## 前端
 
-# 依赖包
+参考 package.json
+
+# 后端
 参考 requirements.txt
 
-# 使用示例
+# 启动前端UI
 
-```bash
-# 拉取代码
-git clone https://github.com/chenwei-zhao/captcha-api
+```shell
+cd frontend
+npm install
+npm run dev/build
+```
 
-# 进入项目根目录
-cd captcha-api
+# 启动后端服务
 
-# 安装依赖
+```shell
+cd backend
 pip install -r requirements.txt
-
-# 启动服务
-fastapi run
-
-# 测试接口
-python api_test.py
-
+uvicorn main:app --port 8000
 ```
-
-## opencv 与 numpy 兼容性
-
-兼容版本1:
-```
-opencv-python==4.12.0.88
-numpy==2.2.6
-```
-
-兼容版本2:
-```
-opencv-python==4.8.0.74
-numpy==1.23.0
-```
-
-更多兼容的版本请自行尝试
-
-
-# 接口文档
-
-启动服务后，在浏览器中访问 ``http://localhost:8000/docs`` 即可查看接口文档。
-
-# Python requests 访问服务示例
-
-```python3
-import requests
-
-
-def test_captcha_api():
-    host = 'http://127.0.0.1:8000'
-    url = f'{host}/captcha'
-    image_path = 'example.png'
-
-    files = {'file': open(image_path, 'rb')}
-
-    data = {'image_type': 'background'}
-
-    response = requests.post(url,
-                             data=data,
-                             files=files
-                             )
-    print(f'状态码: {response.status_code}, 响应内容: {response.json()}')
-
-
-if __name__ == "__main__":
-    test_captcha_api()
-```
-
-# 其他语言访问服务示例
-
-其他语言请参考接口文档自行编写
 
 # 注意事项
 
 在生产环境中，建议结合Gunicorn和Uvicorn，高效运行FastAPI应用，以提供足够的并发处理能力和稳定性。
-
-
-# 免责声明
-
-本项目不针对任何一家验证码厂商，项目所有内容仅供学习交流使用，严禁用于非法用途。
 
 # 许可证
 
@@ -100,4 +42,5 @@ MIT license
 - 163/网易: chenwei_nature@163.com
 
 # 引用
+
 [1] [Captcha Recognizer](https://github.com/chenwei-zhao/captcha-recognizer)

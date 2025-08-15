@@ -8,7 +8,7 @@ def test_captcha_api():
 
     files = {'file': open(image_path, 'rb')}
 
-    data = {'image_type': 'background'}
+    data = {'image_type': 'background', 'version': 'V2'}
 
     response = requests.post(url,
                              data=data,

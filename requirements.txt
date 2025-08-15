@@ -1,2 +1,0 @@
-captcha_recognizer
-fastapi[standard]
