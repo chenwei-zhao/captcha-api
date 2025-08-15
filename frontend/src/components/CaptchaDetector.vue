@@ -131,9 +131,11 @@ export default {
       formData.append('version', this.version);
       formData.append('image_type', this.imageType);
 
+      let apiUrl = import.meta.env.VITE_API_URL
+      let url = `${apiUrl}/captcha`
       try {
         const response = await axios.post(
-            'http://localhost:8000/captcha',
+            url,
             formData,
             {
               headers: {
